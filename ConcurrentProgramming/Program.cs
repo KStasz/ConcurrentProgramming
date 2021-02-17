@@ -7,6 +7,7 @@ namespace ConcurrentProgramming
     {
         static async Task Main(string[] args)
         {
+            //ok
             Console.WriteLine("R - ReaderWriter");
             Console.WriteLine("F - FivePhilosophers");
             Console.WriteLine("P - Promise");
