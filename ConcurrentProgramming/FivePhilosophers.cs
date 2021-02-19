@@ -5,11 +5,6 @@ namespace ConcurrentProgramming
 {
     class FivePhilosophers
     {
-        public FivePhilosophers(bool first)
-        {
-
-        }
-
         private Semaphore[] forks;
         private Semaphore waiter;  
         private Thread[] philosophers; 
@@ -29,6 +24,7 @@ namespace ConcurrentProgramming
             {
                 forks[i] = new Semaphore(1, 1);
             }
+
             waiter = new Semaphore(4, 4);
 
             philosophers = new Thread[5];
@@ -37,7 +33,6 @@ namespace ConcurrentProgramming
                 philosophers[i] = new Thread(new ThreadStart(Philosopher));
                 philosophers[i].Name = "Filozof " + i;
             }
-
         }
 
         public void Begin()

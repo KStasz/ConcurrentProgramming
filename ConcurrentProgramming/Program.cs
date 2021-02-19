@@ -17,7 +17,7 @@ namespace ConcurrentProgramming
                     r.Start();
                     break;
                 case "f":
-                    FivePhilosophers f = new FivePhilosophers(true);
+                    FivePhilosophers f = new FivePhilosophers();
                     f.Start();
                     break;
                 case "p":

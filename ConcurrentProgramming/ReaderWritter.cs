@@ -34,15 +34,14 @@ namespace ConcurrentProgramming
         }
         public void Start()
         {
-            ReaderWritter p = new ReaderWritter();
             for (int i = 0; i < 5; i++)
             {
                 //Reader Thread
-                Thread t1 = new Thread(p.myRead);
+                Thread t1 = new Thread(myRead);
                 //Writer Thread
-                Thread t2 = new Thread(p.myWrite);
+                Thread t2 = new Thread(myWrite);
                 //Reader Again
-                Thread t3 = new Thread(p.myRead);
+                Thread t3 = new Thread(myRead);
                 //Start all threads
                 t1.Start("Thread 1");
                 t2.Start();
