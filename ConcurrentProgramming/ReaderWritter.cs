@@ -9,25 +9,20 @@ namespace ConcurrentProgramming
         ReaderWriterLockSlim rwl = new ReaderWriterLockSlim();
         public void myRead(object threadName)
         {
-            //Accquire Reader Lock.
             rwl.EnterReadLock();
             Console.WriteLine("Read start: Thread: " + threadName + " " + initial);
             if (threadName.ToString() == "Thread 1")
-                //Irregular sleeps makes more chances of
-                //Multiple threads trying to access it
-                //at same time
                 Thread.Sleep(10);
             else
                 Thread.Sleep(250);
             Console.WriteLine("Read end  : Thread: " + threadName + " " + initial);
             rwl.ExitReadLock();
-            //Release Lock
         }
         public void myWrite()
         {
             rwl.EnterWriteLock();
             Console.WriteLine("\nWriter start: " + initial);
-            initial++; //Writing
+            initial++;
             Console.WriteLine("Writer End: " + initial);
             rwl.ExitWriteLock();
             Console.WriteLine();

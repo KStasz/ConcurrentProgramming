@@ -11,10 +11,9 @@ namespace ConcurrentProgramming
 
         public void Start()
         {
-            FivePhilosophers pf = new FivePhilosophers();
-            pf.Begin();
+            Begin();
             Thread.Sleep(10000);
-            pf.Finish();
+            Finish();
         }
 
         public FivePhilosophers()
